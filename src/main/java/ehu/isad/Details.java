@@ -4,8 +4,28 @@ import java.util.Arrays;
 
 public class Details {
     String[] publishers;
-    Integer number_of_pages;
+    String number_of_pages;
     String title;
+    String subtitle;
+
+    public String getTitle() {
+        if(subtitle!=null){ // liburu batzutan azpititulua dago
+            return title + ": " + subtitle;
+        }
+        return title;
+    }
+
+    public String getNumber_of_pages() {
+        return number_of_pages;
+    }
+
+    public String getPublishers() {
+        String pubs=publishers[0];
+        for (int i = 1; i < publishers.length; i++) {
+            pubs = pubs + ", " + publishers[i];
+        }
+        return pubs;
+    }
 
     @Override
     public String toString() {

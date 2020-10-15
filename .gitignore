@@ -8,4 +8,4 @@ build
 
 gradle
 
-/src/main/resources/setup.properties
+/src/liburuak/resources/setup.properties

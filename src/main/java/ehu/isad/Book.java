@@ -10,7 +10,7 @@ public class Book {
     String thumbnail_url;
     Details details;
 
-    public Book(String isbn, String title) {
+    public Book(String title, String isbn) {
         this.isbn = isbn;
         this.title = title;
     }
@@ -20,16 +20,16 @@ public class Book {
         return title;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Book{" +
-//                "isbn='" + isbn + '\'' +
-//                ", title='" + title + '\'' +
-//                ", info_url='" + info_url + '\'' +
-//                ", bib_key='" + bib_key + '\'' +
-//                ", preview_url='" + preview_url + '\'' +
-//                ", thumbnail_url='" + thumbnail_url + '\'' +
-//                ", details=" + details +
-//                '}';
-//    }
+    public String getISBN() {
+        return isbn;
+    }
+
+    public Details getDetails(){
+        return details;
+    }
+
+    public String getThumbnail_url() {
+        return thumbnail_url;
+    }
+
 }

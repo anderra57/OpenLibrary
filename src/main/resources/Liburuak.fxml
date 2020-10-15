@@ -5,8 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controllers.AukeratuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controllers.LiburuKud">
    <children>
       <Label fx:id="label_lib_haut" layoutX="250.0" layoutY="127.0" text="Liburu bat hautatu:" />
       <ComboBox fx:id="combo_lib_haut" layoutX="225.0" layoutY="154.0" prefWidth="150.0" />

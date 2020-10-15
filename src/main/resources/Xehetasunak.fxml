@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controllers.XehetasunakKud">
+   <children>
+      <Label layoutX="172.0" layoutY="37.0" text="Liburuaren xehetasunak:" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_ttl_izenb" layoutX="135.0" layoutY="96.0" text="Izenburua:" />
+      <Label fx:id="lbl_lib_izenb" layoutX="204.0" layoutY="96.0" maxWidth="375.0" text="[ liburuaren izenburua ]" />
+      <Label fx:id="lbl_ttl_arg" layoutX="125.0" layoutY="126.0" text="Argitaletxea:" />
+      <Label fx:id="lbl_ttl_orri" layoutX="139.0" layoutY="157.0" text="Orri kop.:" />
+      <Label fx:id="lbl_ttl_irudi" layoutX="155.0" layoutY="183.0" text="Irudia:" />
+      <Label fx:id="lbl_lib_arg" layoutX="204.0" layoutY="126.0" text="[ liburuaren argitaletxea ]" />
+      <Label fx:id="lbl_lib_orri" layoutX="204.0" layoutY="157.0" text="[ liburuaren orrikop ]" />
+      <ImageView fx:id="img_lib" fitHeight="130.0" fitWidth="138.0" layoutX="204.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@NA.png" />
+         </image></ImageView>
+      <Button fx:id="btn_atzera" layoutX="270.0" layoutY="334.0" mnemonicParsing="false" onAction="#onClick" text="Atzera" />
+   </children>
+</AnchorPane>
