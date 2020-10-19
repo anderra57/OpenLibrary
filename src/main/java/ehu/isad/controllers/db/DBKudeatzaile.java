@@ -1,7 +1,6 @@
 package ehu.isad.controllers.db;
 
 import ehu.isad.utils.Utils;
-
 import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
 import java.util.Properties;

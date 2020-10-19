@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -25,26 +24,24 @@ public class LiburuKud implements Initializable {
         liburuak = pLiburuak;
     }
 
-    public Book getAukeratutakoBook(){
-        return book;
-    }
-
     @FXML
     private ComboBox<Book> combo_lib_haut;
 
     @FXML
     public void onClick(ActionEvent actionEvent) throws IOException {
         book = (Book)combo_lib_haut.getValue();
-        liburuak.xehetasunakErakutsi(book);
+
+        if (!zerbitzuKud.bilatuLiburua(book)){
+            zerbitzuKud.xehetasunakGehitu(book);
+        }
+
+        liburuak.xehetasunakErakutsi(book.getISBN());
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //ObservableList<Book> items = Liburuak.getList();
-/**/
         zerbitzuKud=ZerbitzuKud.getInstance();
         List<Book> itemsL = zerbitzuKud.lortuIzenburuak();
-        System.out.println(itemsL.toString());
         ObservableList<Book> items = FXCollections.observableArrayList(itemsL);
         combo_lib_haut.setItems(items);
     }

@@ -3,7 +3,6 @@ package ehu.isad.utils;
 import com.google.gson.Gson;
 import ehu.isad.Book;
 import javafx.scene.image.Image;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,6 +20,10 @@ public class Sarea {
         return nSarea;
     }
 
+    public Book lortuDatuak(Book book) throws IOException {
+        return readFromUrl(book.getISBN());
+    }
+
     private Book readFromUrl(String isbn) throws IOException {
         URL openlibrary = new URL("https://openlibrary.org/api/books?bibkeys=ISBN:"+isbn+"&jscmd=details&format=json");
         URLConnection yc = openlibrary.openConnection();
@@ -34,6 +37,11 @@ public class Sarea {
         return gson.fromJson(inputLine, Book.class);
     }
 
+    public Image lortuIrudia(String url) throws IOException {
+        String smallURL = url;
+        String mediumURL = smallURL.replaceAll("-S.","-M.");
+        return createImage(mediumURL);
+    }
 
     private Image createImage(String url) throws IOException {
         URLConnection conn = new URL(url).openConnection();
@@ -43,14 +51,4 @@ public class Sarea {
         }
     }
 
-    public Image lortuIrudia(String url) throws IOException {
-        String smallURL = url;
-        String mediumURL = smallURL.replaceAll("-S.","-M.");
-        return createImage(mediumURL);
-    }
-
-
-    public Book lortuDatuak(Book book) throws IOException {
-        return readFromUrl(book.getISBN());
-    }
 }

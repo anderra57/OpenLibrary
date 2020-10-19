@@ -3,14 +3,11 @@ package ehu.isad;
 import ehu.isad.controllers.ui.LiburuKud;
 import ehu.isad.controllers.ui.XehetasunakKud;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class Liburuak extends Application {
@@ -53,8 +50,8 @@ public class Liburuak extends Application {
 
     }
 
-    public void xehetasunakErakutsi(Book book) throws IOException {
-        xehetasunakKud.hasieratu(book);
+    public void xehetasunakErakutsi(String isbn) throws IOException {
+        xehetasunakKud.hasieratu(isbn);
         stage.setScene(xehetasunakScene);
         stage.show();
     }
@@ -64,21 +61,17 @@ public class Liburuak extends Application {
         stage.show();
     }
 
-    public String[] lortuDatuak (){
-        return null;
-    }
-
-    public static ObservableList<Book> getList() {
-        ObservableList<Book> books = FXCollections.observableArrayList();
-        books.addAll(
-                new Book("Blockchain: Blueprint for a New Economy","9781491920497"),
-                new Book("R for Data Science","1491910399"),
-                new Book("Fluent Python","1491946008"),
-                new Book("Natural Language Processing with PyTorch","1491978236"),
-                new Book("Data Algorithms","9781491906187")
-        );
-        return books;
-    }
+//    public static ObservableList<Book> getList() {
+//        ObservableList<Book> books = FXCollections.observableArrayList();
+//        books.addAll(
+//                new Book("Blockchain: Blueprint for a New Economy","9781491920497"),
+//                new Book("R for Data Science","1491910399"),
+//                new Book("Fluent Python","1491946008"),
+//                new Book("Natural Language Processing with PyTorch","1491978236"),
+//                new Book("Data Algorithms","9781491906187")
+//        );
+//        return books;
+//    }
 
     public static void main(String[] args) {
         launch(args);
