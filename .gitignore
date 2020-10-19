@@ -9,3 +9,4 @@ build
 gradle
 
 /src/liburuak/resources/setup.properties
+/src/main/resources/setup.properties
