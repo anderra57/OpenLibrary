@@ -128,4 +128,19 @@ public class ZerbitzuKud {
 
         return emaitza;
     }
+
+    public void ezabatuLiburua(Book book) {
+        String isbn = book.getISBN();
+        String query = "delete from liburuak where isbn='" + isbn + "';";
+        DBKudeatzaile dbKudeatzaile = DBKudeatzaile.getInstantzia();
+        dbKudeatzaile.execSQL(query);
+    }
+
+    public void gehituLiburua(Book book) {
+        String izen = book.getIzenburuLaburra();
+        String isbn = book.getISBN();
+        String query = "insert into liburuak(isbn,izenburulaburra) values ('"+isbn+"','"+izen+"')";
+        DBKudeatzaile dbKudeatzaile = DBKudeatzaile.getInstantzia();
+        dbKudeatzaile.execSQL(query);
+    }
 }

@@ -32,4 +32,7 @@ public class Book {
         return thumbnail_url;
     }
 
+    public String getIzenburuLaburra() {
+        return title;
+    }
 }
